@@ -1,6 +1,6 @@
 # Hardware Overview
 
-## Primary Server (Proxmox + TrueNAS)
+## Primary Server
 #### Hardware Specifications
 - CPU: Intel XEON E5-2620 v3
 - Memory: 128GB DDR4 ECC
@@ -19,7 +19,7 @@
 - Automation & Data Processing
 
 
-## Secondary Server (DNS Server)
+## Secondary Server
 #### Hardware Specifications 
 - CPU: H616 64-Bit
 - Memory: 512MB
