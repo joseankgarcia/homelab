@@ -13,4 +13,4 @@ The rack layout follows a logical top-down design and separation, making mainten
 - ```Bottom / Back```:```Power Distribution Unit ```
 
 ### Diagram
-![Diagram](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/images/Rack-Layout-Diagram-Homelab.png)
+![Diagram](https://github.com/joseankgarcia/homelab/blob/main/diagram/Rack-Layout-Diagram-Homelab.png)
