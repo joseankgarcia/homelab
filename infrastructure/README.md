@@ -13,5 +13,5 @@ Routing is handled at the gateway, and remote access into the homelab is handled
 - [Hardware](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/hardware.md)
     - [Primary Server](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/hardware.md#primary-server)
     - [Secondary Server](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/hardware.md#secondary-server)
-- [Storage](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/storage.md)
+- [Storage](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/storage-architecture.md)
 - [VLAN Design](https://github.com/joseankgarcia/homelab/blob/main/infrastructure/vlan-design.md)
