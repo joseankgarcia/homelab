@@ -20,11 +20,24 @@
 | Centralized Monitoring | ✅ | Grafana, Prometheus, Loki, and Alertmanager provide visibility |
 | Log Collection | ✅ | Promtail collects service and container logs |
 | Configuration Versioning | ✅ | Compose files and documentation are tracked in Git |
-| Backup Planning | 🟡 In Progress | Backup strategy is being documented and expanded |
-| MFA for Admin Tools | 🟡 In Progress | MFA will be added where supported |
-| Vulnerability Review | 🟡 In Progress | Periodic review process planned for services and containers |
+| Backup Planning | 🟡 | Backup strategy is being documented and expanded |
+| MFA for Admin Tools | 🟡 | MFA will be added where supported |
+| Vulnerability Review | 🟡 | Periodic review process planned for services and containers |
 
 ---
+
+---
+
+## Legend
+
+| Symbol | Meaning |
+|---|---| 
+| ✅ | Implemented |
+| 🟡 |  In Progress |
+
+---
+
+
 
 ## Summary
 
