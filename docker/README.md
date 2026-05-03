@@ -11,7 +11,7 @@ This stack overview documents the Docker images, containers, Compose files, and 
 - **Media** is responsible for media storage, organization, and viewing across the LAN.
 
 ## Navigation
-- [Automation](https://github.com/joseankgarcia/homelab/tree/main/docker/automation.md)
+- [Automation](https://github.com/joseankgarcia/homelab/tree/main/docker/automation)
 - [Proxy](https://github.com/joseankgarcia/homelab/blob/main/docker/proxy.md)
 - [Core](https://github.com/joseankgarcia/homelab/blob/main/docker/core.md)
 - [Services](https://github.com/joseankgarcia/homelab/blob/main/docker/services.md)
