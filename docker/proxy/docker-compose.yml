@@ -1,0 +1,76 @@
+services:
+  nginx-proxy-manager:
+    container_name: nginx-proxy-manager
+    image: 'docker.io/jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    networks:
+      - proxy
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./nginx/data:/data
+      - ./nginx/letsencrypt:/etc/letsencrypt
+    env_file:
+        - .env
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sS -m 5 http://127.0.0.1:81/ -o /dev/null"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+      
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    networks:
+      - proxy
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "9081:80/tcp"
+      - "4443:443/tcp"
+       - "67:67/udp"
+       - "123:123/udp"
+    env_file:
+      - .env
+    volumes:
+      - './pihole/etc-pihole:/etc/pihole' # For persisting Pi-hole's databases and common configuration file
+      - './pihole/etc-dnsmasq.d:/etc/dnsmasq.d' # Uncomment if custom dnsmasq config files exist
+    healthcheck:
+      test: ["CMD-SHELL", "pihole status | grep -q 'FTL is listening on port 53'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    cap_add:
+      - SYS_TIME
+
+  netbird:
+    container_name: netbird
+    hostname: server
+    restart: unless-stopped
+    cap_add:
+        - NET_ADMIN
+        - SYS_ADMIN
+        - SYS_RESOURCE
+    network_mode: host
+    env_file:
+        - .env
+    volumes:
+        - ./netbird/netbird-client:/etc/netbird
+    image: netbirdio/netbird:latest
+    healthcheck:
+      test: ["CMD-SHELL", "netbird status >/dev/null 2>&1 || ps aux | grep -q '[n]etbird' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+networks:
+    proxy:
+      external: true
